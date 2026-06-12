@@ -3,6 +3,15 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from xhtml2pdf import pisa
 from flask import make_response
+from sqlalchemy import extract
+from xhtml2pdf import pisa
+import os
+from io import BytesIO
+from flask import make_response
+from xhtml2pdf import pisa
+from openpyxl import Workbook
+from flask import send_file
+import io
 
 app = Flask(__name__)
 app.secret_key = 'pulih'
@@ -126,7 +135,7 @@ def login():
 
     return redirect('/?login_error=1')
 
-from sqlalchemy import extract
+
 
 @app.route('/admin')
 def admin():
@@ -844,9 +853,7 @@ with app.app_context():
 
     print("Database berhasil dibuat!")
 
-from flask import make_response
-from xhtml2pdf import pisa
-import os
+
 
 logo_path = os.path.join(
     app.root_path,
@@ -855,11 +862,7 @@ logo_path = os.path.join(
     'logo',
     'logo.png'
 )
-from io import BytesIO
-from xhtml2pdf import pisa
-from datetime import datetime
-from flask import make_response
-from xhtml2pdf import pisa
+
 
 @app.route('/download_pdf/<int:id>')
 def download_pdf(id):
@@ -975,9 +978,7 @@ def syarat():
         active_page='syarat'
     )
 
-from openpyxl import Workbook
-from flask import send_file
-import io
+
 
 @app.route('/export_excel')
 def export_excel():
