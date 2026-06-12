@@ -1281,6 +1281,57 @@ About DASS & Self Assesment
   margin-top: 25px;
   display: none;
 }
+@media (max-width: 768px) {
+
+  .tes-card{
+      width: 95%;
+      padding: 20px;
+      margin: auto;
+  }
+
+  .tes-card img{
+      max-width: 180px;
+      height: auto;
+  }
+
+  .stepper{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: nowrap;
+  }
+
+  .step{
+      flex: 1;
+      min-width: 60px;
+  }
+
+  .step-circle{
+      width: 45px;
+      height: 45px;
+      font-size: 18px;
+  }
+
+  .step-title{
+      font-size: 12px;
+  }
+
+  .tes-card h1{
+      font-size: 32px;
+  }
+
+  .tes-card h2{
+      font-size: 26px;
+  }
+
+  .tes-card p{
+      font-size: 14px;
+      line-height: 1.7;
+      text-align: center;
+  }
+
+}
 /* SELFCARE */
 
 .tes-header,.judul-box,.riwayat-header{
