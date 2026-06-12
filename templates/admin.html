@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+   
+    <title>Dashboard Admin Pulih</title>
+    <title>Pulih</title>
+     <link rel="icon"
+    href="{{ url_for('static', filename='img/logo/logo.png') }}">
+  </head>
+
+    <body>
+      <div class="topbar animate-up">
+        <div class="logo-area">
+          <h1>Pulih Admin</h1>
+
+          <p>
+            Selamat datang,
+            <b>{{ session['user'] }}</b>
+          </p>
+        </div>
+
+        <a href="#" class="logout-btn" onclick="showLogoutModal()"> Logout </a>
+      </div>
+
+      <!-- CARD STATISTIK -->
+
+      <div class="card-grid">
+        <div class="card total animate-left">
+          <h3>Total Pengguna</h3>
+
+          <div class="number">{{ total_user }}</div>
+        </div>
+
+        <div class="card tes animate-right">
+          <h3>Total Tes</h3>
+
+          <div class="number">{{ total_tes }}</div>
+        </div>
+      </div>
+
+      <!-- GRAFIK -->
+
+      <div class="chart-card animate-up">
+        <h2 class="section-title">Pertumbuhan Pengguna</h2>
+
+        <canvas id="userChart"></canvas>
+      </div>
+
+      <!-- SEARCH + EXPORT -->
+
+      <div class="action-bar animate-up">
+        <div class="search-wrapper">
+          <i class="bi bi-search search-icon"></i>
+
+          <input type="text" id="searchUser" placeholder="Cari nama atau email pengguna..." />
+        </div>
+        <a href="/export_excel" class="excel-btn">
+          <i class="bi bi-file-earmark-excel-fill"></i>
+          Export Excel
+        </a>
+      </div>
+
+      <!-- TABEL USER -->
+
+      <h2 class="section-title">Daftar Pengguna</h2>
+
+      <table id="userTable" class="animate-up">
+        <tr>
+          <th>Nama</th>
+
+          <th>Email</th>
+
+          <th>Usia</th>
+
+          <th>Gender</th>
+
+          <th>Semester</th>
+
+          <th>Role</th>
+
+          <th>Detail</th>
+
+          <th>Hapus</th>
+        </tr>
+
+        {% for user in users %}
+
+        <tr>
+          <td>{{ user.nama }}</td>
+
+          <td>{{ user.email }}</td>
+
+          <td>{% if user.role == 'admin' %} - {% else %} {{ user.usia }} {% endif %}</td>
+
+          <td>{% if user.role == 'admin' %} - {% else %} {{ user.gender }} {% endif %}</td>
+
+          <td>{% if user.role == 'admin' %} - {% else %} {{ user.semester }} {% endif %}</td>
+
+          <td>
+            {% if user.role == 'admin' %}
+
+            <span class="role-admin"> Admin </span>
+
+            {% else %}
+
+            <span class="role-user"> User </span>
+
+            {% endif %}
+          </td>
+
+          <td>
+            {% if user.role != 'admin' %}
+
+            <a href="/admin/user/{{ user.id }}" class="detail-btn"> Detail </a>
+
+            {% else %} - {% endif %}
+          </td>
+
+          <td>
+            {% if user.role != 'admin' %}
+
+            <a href="#" class="delete-btn" onclick="showDeleteModal('{{ user.id }}','{{ user.nama }}')"> Hapus </a>
+
+            {% endif %}
+          </td>
+        </tr>
+
+        {% endfor %}
+      </table>
+
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+      <script>
+        const userData = JSON.parse("{{ user_per_bulan | tojson | safe }}");
+
+        const ctx = document.getElementById("userChart");
+
+        new Chart(ctx, {
+          type: "line",
+
+          data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"],
+
+            datasets: [
+              {
+                label: "User Terdaftar",
+
+                data: userData,
+
+                borderWidth: 3,
+
+                tension: 0.4,
+
+                fill: true,
+              },
+            ],
+          },
+        });
+      </script>
+
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+      <script>
+        document.querySelectorAll(".number,h2").forEach((el) => {
+          let value = parseInt(el.innerText);
+
+          if (!isNaN(value)) {
+            let start = 0;
+
+            let interval = setInterval(() => {
+              start++;
+
+              el.innerText = start;
+
+              if (start >= value) {
+                clearInterval(interval);
+              }
+            }, 20);
+          }
+        });
+      </script>
+      <div id="logoutModal" class="logout-modal">
+        <div class="logout-content">
+          <div class="logout-icon">
+            <i class="bi bi-box-arrow-right"></i>
+          </div>
+
+          <h3>Logout Akun</h3>
+
+          <p>Apakah Anda yakin ingin keluar dari akun ini?</p>
+
+          <div class="logout-actions">
+            <button class="cancel-btn" onclick="closeLogoutModal()">Batal</button>
+
+            <a href="/logout" class="confirm-btn"> Ya, Logout </a>
+          </div>
+        </div>
+      </div>
+      <script>
+        function showLogoutModal() {
+          document.getElementById("logoutModal").classList.add("active");
+        }
+
+        function closeLogoutModal() {
+          document.getElementById("logoutModal").classList.remove("active");
+        }
+      </script>
+
+      <div class="modal-delete" id="deleteModal">
+        <div class="modal-content">
+          <div class="modal-icon">
+            <i class="bi bi-trash"></i>
+          </div>
+
+          <h3>Hapus Pengguna?</h3>
+
+          <p id="deleteText"></p>
+
+          <div class="modal-buttons">
+            <button class="cancel-btn" onclick="closeDeleteModal()">Batal</button>
+
+            <a id="confirmDeleteBtn" class="confirm-btn"> Ya, Hapus </a>
+          </div>
+        </div>
+      </div>
+      <script>
+        function showDeleteModal(id, nama) {
+          document.getElementById("deleteModal").classList.add("active");
+
+          document.getElementById("deleteText").innerHTML = `Apakah Anda yakin ingin menghapus akun <b>${nama}</b>?<br><br>
+    Seluruh riwayat tes pengguna juga akan dihapus permanen.`;
+
+          document.getElementById("confirmDeleteBtn").href = "/hapus_user/" + id;
+        }
+
+        function closeDeleteModal() {
+          document.getElementById("deleteModal").classList.remove("active");
+        }
+      </script>
+       <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </body>
+</html>

@@ -1,0 +1,567 @@
+<!doctype html>
+
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Detail Pengguna</title>
+
+    <style>
+      * /* =========================
+   BODY
+========================= */
+
+body {
+        background: #f6fcfd;
+        padding: 40px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* =========================
+   TOPBAR
+========================= */
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .page-title h1 {
+        color: #49b9c6;
+        margin-bottom: 5px;
+      }
+
+      .page-title p {
+        color: #666;
+      }
+
+      .back-btn {
+        background: #49b9c6;
+        color: white;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 12px;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .back-btn:hover {
+        background: #39a8b5;
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      /* =========================
+   CARD PROFIL
+========================= */
+
+      .user-profile-card {
+        background: white;
+        border-radius: 25px;
+        padding: 35px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        margin-bottom: 35px;
+      }
+
+      .profile-left {
+        display: flex;
+        gap: 25px;
+      }
+
+      .avatar-circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: #49b9c6;
+        color: white;
+        font-size: 42px;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .user-info h2 {
+        margin: 0;
+        color: #222;
+      }
+
+      .user-info p {
+        color: #777;
+        margin-top: 5px;
+        margin-bottom: 20px;
+      }
+
+      /* =========================
+   DATA USER
+========================= */
+
+      .detail-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .detail-item {
+        background: #f7fbfc;
+        padding: 14px;
+        border-radius: 14px;
+      }
+
+      .detail-item span {
+        display: block;
+        color: #888;
+        font-size: 13px;
+        margin-bottom: 4px;
+      }
+
+      .detail-item strong {
+        color: #333;
+      }
+
+      /* =========================
+   TOTAL TES
+========================= */
+
+      .total-circle {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 8px solid #49b9c6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+      }
+
+      .total-circle:hover {
+        transform: scale(1.05);
+      }
+
+      .total-circle h2 {
+        margin: 0;
+        font-size: 54px;
+        color: #49b9c6;
+      }
+
+      .total-circle span {
+        color: #666;
+        font-weight: 600;
+      }
+
+      /* =========================
+   TITLE
+========================= */
+
+      .section-title {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      /* =========================
+   TABLE
+========================= */
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      th {
+        background: #49b9c6;
+        color: white;
+        padding: 18px;
+        text-align: center;
+      }
+
+      td {
+        padding: 18px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+      }
+
+      tr:hover {
+        background: #f8fdfe;
+      }
+
+      /* =========================
+   BADGE KATEGORI
+========================= */
+
+      .kategori-badge {
+        display: inline-block;
+        margin-top: 6px;
+        padding: 6px 12px;
+        border-radius: 20px;
+        background: #dff6fa;
+        color: #49b9c6;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      /* =========================
+   EMPTY
+========================= */
+
+      .empty {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        color: #777;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      /* =========================
+   MOBILE
+========================= */
+
+      @media (max-width: 768px) {
+        body {
+          padding: 20px;
+        }
+
+        .topbar {
+          flex-direction: column;
+          gap: 15px;
+          align-items: flex-start;
+        }
+
+        .user-profile-card {
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .profile-left {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .detail-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .total-circle {
+          width: 150px;
+          height: 150px;
+        }
+
+        table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+      }
+
+      /* =========================
+   ANIMATION
+========================= */
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes zoomIn {
+        from {
+          opacity: 0;
+          transform: scale(0.7);
+        }
+
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .animate-up {
+        animation: fadeUp 0.8s ease forwards;
+      }
+
+      .animate-left {
+        animation: fadeLeft 0.8s ease forwards;
+      }
+
+      .animate-right {
+        animation: fadeRight 0.8s ease forwards;
+      }
+
+      .animate-zoom {
+        animation: zoomIn 0.8s ease forwards;
+      }
+
+      /* =========================
+   TABEL RIWAYAT
+========================= */
+
+      .riwayat-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      .riwayat-table th {
+        background: #49b9c6;
+        color: white;
+        padding: 18px;
+        text-align: center;
+      }
+
+      .riwayat-table td {
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+      }
+
+      .riwayat-table tr:hover {
+        background: #f8fdfe;
+      }
+
+      .score-cell {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .score-number {
+        font-size: 22px;
+        font-weight: 700;
+        color: #222;
+      }
+
+      .kategori-badge {
+        background: #dff6fa;
+        color: #49b9c6;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .total-score-badge {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        min-width: 70px;
+        height: 70px;
+
+        border-radius: 50%;
+
+        background: #49b9c6;
+        color: white;
+
+        font-size: 22px;
+        font-weight: 700;
+
+        box-shadow: 0 5px 15px rgba(73, 185, 198, 0.3);
+
+        transition: 0.3s;
+      }
+
+      .total-score-badge:hover {
+        transform: scale(1.1);
+      }
+
+      @media (max-width: 768px) {
+        .riwayat-table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="topbar animate-up">
+      <div class="page-title">
+        <h1>Detail Pengguna</h1>
+
+        <p>Informasi lengkap dan riwayat tes pengguna</p>
+      </div>
+
+      <a href="/admin" class="back-btn"> Kembali </a>
+    </div>
+
+    <!-- PROFIL USER -->
+
+    <div class="user-profile-card animate-up">
+      <div class="profile-left">
+        <div class="avatar-circle" avatar-circle animate-zoom>{{ user.nama[0]|upper }}</div>
+
+        <div class="user-info">
+          <h2>{{ user.nama }}</h2>
+
+          <p>{{ user.email }}</p>
+
+          <div class="detail-grid">
+            <div class="detail-item">
+              <span>Usia</span>
+              <strong>{{ user.usia }} Tahun</strong>
+            </div>
+
+            <div class="detail-item">
+              <span>Jenis Kelamin</span>
+              <strong>{{ user.gender }}</strong>
+            </div>
+
+            <div class="detail-item">
+              <span>Program Studi</span>
+              <strong>{{ user.prodi }}</strong>
+            </div>
+
+            <div class="detail-item">
+              <span>Semester</span>
+              <strong>{{ user.semester }}</strong>
+            </div>
+
+            <div class="detail-item">
+              <span>Role</span>
+              <strong>{{ user.role }}</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-right">
+        <div class="total-circle animate-zoom">
+          <h2>{{ total_tes }}</h2>
+
+          <span>Total Tes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIWAYAT -->
+
+    <h2 class="section-title">Riwayat Tes Pengguna</h2>
+
+    {% if riwayat %}
+
+    <table class="riwayat-table">
+      <thead>
+        <tr>
+          <th>Tanggal Tes</th>
+          <th>Depresi</th>
+          <th>Anxiety</th>
+          <th>Stress</th>
+          <th>Skor Total</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for tes in riwayat %}
+
+        <tr>
+          <td>{{ tes.tanggal.strftime('%d-%m-%Y %H:%M') }}</td>
+
+          <td>
+            <div class="score-cell">
+              <div class="score-number">{{ tes.skor_depresi }}</div>
+
+              <span class="kategori-badge"> {{ tes.kategori_depresi }} </span>
+            </div>
+          </td>
+
+          <td>
+            <div class="score-cell">
+              <div class="score-number">{{ tes.skor_anxiety }}</div>
+
+              <span class="kategori-badge"> {{ tes.kategori_anxiety }} </span>
+            </div>
+          </td>
+
+          <td>
+            <div class="score-cell">
+              <div class="score-number">{{ tes.skor_stress }}</div>
+
+              <span class="kategori-badge"> {{ tes.kategori_stress }} </span>
+            </div>
+          </td>
+
+          <td>
+            <div class="total-score-badge">{{ tes.skor_depresi + tes.skor_anxiety + tes.skor_stress }}</div>
+          </td>
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+
+    {% else %}
+
+    <div class="empty">Pengguna belum pernah melakukan tes.</div>
+
+    {% endif %}
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      document.querySelectorAll(".number,h2").forEach((el) => {
+        let value = parseInt(el.innerText);
+
+        if (!isNaN(value)) {
+          let start = 0;
+
+          let interval = setInterval(() => {
+            start++;
+
+            el.innerText = start;
+
+            if (start >= value) {
+              clearInterval(interval);
+            }
+          }, 20);
+        }
+      });
+    </script>
+  </body>
+</html>

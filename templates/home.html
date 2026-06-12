@@ -1,0 +1,218 @@
+{% extends 'base.html' %} {% block content %}
+
+<section class="hero">
+  <!-- LEFT -->
+  <div class="hero-left" data-aos="fade-up">
+    <h1>
+      Yuk, Kenali Kondisi Mental Kamu
+      <br />
+
+      <span> Lebih Awal Bersama Pulih! </span>
+    </h1>
+
+    <p>Lakukan self-assessment untuk memahami kondisi kesehatan mentalmu secara mandiri melalui tes DASS-21 yang mudah dan cepat.</p>
+
+    <div class="hero-button" data-aos="fade-up">
+      <a href="#" class="hero-btn pulse-btn" data-bs-toggle="modal" data-bs-target="#consentModal"> Mulai Tes Sekarang </a>
+      <a href="#tentang" class="hero-btn1"> Pelajari lebih lanjut </a>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="hero-right" data-aos="fade-up">
+    <img src="{{ url_for('static', filename='img/hero/hero.png') }}" />
+  </div>
+</section>
+<!-- FITUR -->
+<section class="fitur-section">
+  <div class="fitur-card">
+    <!-- ITEM -->
+    <div class="fitur-item" data-aos="fade-up">
+      <img src="{{ url_for('static',filename='img/hero/1.png') }}" />
+
+      <h4>Deteksi Dini</h4>
+
+      <p>Kenali gejala kecemasan, depresi, dan stres sejak awal</p>
+    </div>
+
+    <!-- ITEM -->
+    <div class="fitur-item" data-aos="fade-up">
+      <img src="{{ url_for('static',filename='img/hero/3.png') }}" />
+
+      <h4>Privasi Terjaga</h4>
+      <p>Data dan hasil tes aman dan rahasia</p>
+    </div>
+
+    <!-- ITEM -->
+    <div class="fitur-item" data-aos="fade-up">
+      <img src="{{ url_for('static',filename='img/hero/2.png') }}" />
+
+      <h4>Berbasis DASS-21</h4>
+
+      <p>Instrumen valid dan diakui secara internasional</p>
+    </div>
+
+    <!-- ITEM -->
+    <div class="fitur-item" data-aos="fade-up">
+      <img src="{{ url_for('static',filename='img/hero/5.png') }}" />
+
+      <h4>Rekomendasi Personal</h4>
+
+      <p>Saran dan aktivitas sesuai dengan kondisi kamu</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="tentang" data-aos="fade-up">
+  <h2>Lebih Kenal Dengan Self-Assessment & Dass-21</h2>
+
+  <div class="title-line"></div>
+
+  <div class="about-wrapper">
+    <!-- BOX -->
+    <div class="about-box">
+      <div class="about-icon">
+        <img src="{{ url_for('static',filename='img/hero/self assesment.png') }}" />
+      </div>
+
+      <div>
+        <h3>Apa itu self-assessment ?</h3>
+
+        <p>
+          Self-assessment tes kesehatan mental adalah alat ukur berupa kuesioner mandiri yang dirancang untuk mendeteksi dini gejala gangguan kesehatan jiwa seperti depresi, kecemasan, atau stres. Tes ini berbasis laporan diri, cepat, mudah
+          dilakukan secara daring, serta bertujuan untuk memantau kesejahteraan psikologis, bukan untuk diagnosis medis resmi.
+        </p>
+      </div>
+    </div>
+
+    <!-- BOX -->
+    <div class="about-box" data-aos="fade-up">
+      <div class="about-icon">
+        <img src="{{ url_for('static',filename='img/hero/dass.png') }}" />
+      </div>
+
+      <div>
+        <h3>Apa itu DASS-21 ?</h3>
+
+        <p>
+          Depression Anxiety Stress Scales 21 (DASS-21) merupakan instrumen laporan diri yang mengukur kecemasan, depresi, dan stres. DASS-21 merupakan bentuk singkat dari ukuran 42 item Lovibond dan Lovibond (1995) yang dikembangkan untuk
+          mencakup berbagai gejala kecemasan dan depresi dengan memberikan perbedaan antara tiga konstruk tersebut.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CONSENT MODAL -->
+<div class="modal fade" id="consentModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content consent-modal">
+      <!-- CLOSE -->
+      <button type="button" class="btn-close consent-close" data-bs-dismiss="modal"></button>
+
+      <div class="modal-body">
+        <!-- ICON -->
+        <div class="consent-header">
+          <div class="consent-icon">
+            <i class="bi bi-file-earmark-check"></i>
+          </div>
+
+          <h2>Persetujuan Pengguna</h2>
+
+          <p>Dengan menggunakan sistem screening mental health ini, saya menyatakan bersedia secara sukarela untuk mengikuti proses screening.</p>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="consent-content">
+          <!-- ITEM -->
+          <div class="consent-item">
+            <div class="consent-item-icon">
+              <i class="bi bi-shield-check"></i>
+            </div>
+
+            <p>Sistem ini digunakan untuk screening awal dan self-assessment kesehatan mental, serta bukan pengganti diagnosis profesional dari psikolog atau tenaga medis.</p>
+          </div>
+
+          <!-- ITEM -->
+          <div class="consent-item">
+            <div class="consent-item-icon">
+              <i class="bi bi-lock"></i>
+            </div>
+
+            <p>Data dan jawaban yang diberikan dapat digunakan untuk proses screening, pengembangan sistem, dan kebutuhan penelitian akademik dengan menjaga kerahasiaan data.</p>
+          </div>
+
+          <!-- ITEM -->
+          <div class="consent-item">
+            <div class="consent-item-icon">
+              <i class="bi bi-person-check"></i>
+            </div>
+
+            <p>Data pribadi dan hasil screening akan disimpan secara aman dan tidak ditampilkan secara publik.</p>
+          </div>
+
+          <!-- ITEM -->
+          <div class="consent-item">
+            <div class="consent-item-icon">
+              <i class="bi bi-people"></i>
+            </div>
+
+            <p>Hanya pihak yang berwenang yang dapat mengakses data sesuai kebijakan privasi yang berlaku.</p>
+          </div>
+
+          <!-- ITEM -->
+          <div class="consent-item">
+            <div class="consent-item-icon">
+              <i class="bi bi-x-circle"></i>
+            </div>
+
+            <p>Pengguna dapat menghentikan penggunaan sistem kapan saja apabila merasa tidak nyaman.</p>
+          </div>
+
+          <!-- ITEM -->
+          <div class="consent-item">
+            <div class="consent-item-icon">
+              <i class="bi bi-bar-chart"></i>
+            </div>
+
+            <p>Data yang telah dianonimkan dapat digunakan untuk analisis, laporan, atau publikasi akademik.</p>
+          </div>
+
+          <!-- ITEM -->
+          <div class="consent-item">
+            <div class="consent-item-icon">
+              <i class="bi bi-heart-pulse"></i>
+            </div>
+
+            <p>Jika sistem mendeteksi indikasi risiko psikologis yang tinggi, pengguna disarankan menghubungi layanan konseling atau bantuan profesional.</p>
+          </div>
+        </div>
+
+        <!-- CHECKBOX -->
+        <div class="consent-check">
+          <input type="checkbox" id="consentCheck" />
+
+          <label for="consentCheck"> Saya telah membaca dan memahami isi persetujuan ini, memberikan persetujuan secara sukarela, dan memahami penggunaan data dalam sistem ini. </label>
+        </div>
+
+        <!-- BUTTON -->
+        <div class="consent-button">
+          <button type="button" class="btn-tidak" data-bs-dismiss="modal">Saya Tidak Setuju</button>
+
+          <a href="/psikotes" class="btn-setuju disabled" id="btnSetuju"> Saya Setuju </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% if request.args.get('login_error') %}
+
+<script>
+  window.onload = function () {
+    let loginModal = new bootstrap.Modal(document.getElementById("authModal"));
+
+    loginModal.show();
+  };
+</script>
+
+{% endif %} {% endblock %}

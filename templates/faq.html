@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block content %}
+
+<section class="info-page">
+  <div class="container">
+    <div class="info-hero">
+      <h1>
+        <i class="bi bi-question-circle-fill"></i>
+        FAQ
+      </h1>
+
+      <p>Pertanyaan yang sering diajukan pengguna PULIH.</p>
+    </div>
+
+    <div class="accordion" id="faq">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#f1">Apa itu DASS-21?</button>
+        </h2>
+
+        <div id="f1" class="accordion-collapse collapse show">
+          <div class="accordion-body">DASS-21 adalah instrumen pengukuran tingkat Depresi, Anxiety, dan Stress yang digunakan untuk deteksi dini kondisi psikologis.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">Apakah hasil ini diagnosis?</button>
+        </h2>
+
+        <div id="f2" class="accordion-collapse collapse">
+          <div class="accordion-body">Tidak. Hasil hanya digunakan untuk skrining awal dan bukan diagnosis medis.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f3">Apakah data saya aman?</button>
+        </h2>
+
+        <div id="f3" class="accordion-collapse collapse">
+          <div class="accordion-body">Ya. Data pengguna disimpan secara aman dan hanya digunakan untuk kebutuhan sistem.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

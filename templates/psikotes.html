@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block content %}
+<section class="psikotes-section">
+         <div class="container"data-aos="fade-up">
+
+            <div class="judul-box"data-aos="fade-up">
+
+                <h1>
+                    Ayo mulai tes DASS-21 kamu
+                </h1>
+
+            </div>
+
+    <div class="alur-card"data-aos="fade-up">
+
+        <h2>Tahapan Tes</h2>
+
+        <div class="alur-wrapper"data-aos="fade-up">
+
+            <div class="alur-item">
+                <img src="{{ url_for('static', filename='img/psikotes/depresi.png') }}">
+                <h3>Tes Depresi</h3>
+                <p>Menjawab pertanyaan depresi</p>
+            </div>
+
+            <div class="panah">→</div>
+
+            <div class="alur-item">
+                <img src="{{ url_for('static', filename='img/psikotes/anxiety.png') }}">
+                <h3>Tes Anxiety</h3>
+                <p>Menjawab pertanyaan anxiety</p>
+            </div>
+
+            <div class="panah">→</div>
+
+            <div class="alur-item">
+                <img src="{{ url_for('static', filename='img/psikotes/stress.png') }}">
+                <h3>Tes Stress</h3>
+                <p>Menjawab pertanyaan stress</p>
+            </div>
+
+            <div class="panah">→</div>
+
+            <div class="alur-item">
+                <img src="{{ url_for('static', filename='img/psikotes/hasil.png') }}">
+                <h3>Hasil</h3>
+                <p>Menampilkan hasil tes</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mulai-wrapper"data-aos="fade-up">
+        <a href="/depresi" class="btn-mulai">
+            Mulai Tes
+        </a>
+    </div>
+   </div>
+</section>
+
+{% endblock %}

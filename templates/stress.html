@@ -1,0 +1,621 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="stress-section">
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="stress-top"data-aos="fade-down">
+
+            <!-- GAMBAR -->
+            <div class="stress-image">
+
+                <img src="{{ url_for('static', filename='img/psikotes/stress1.png') }}">
+
+            </div>
+
+            <!-- TEXT -->
+            <div class="stress-text">
+
+               <div class="stepper">
+
+                <div class="step active">
+                    <span><i class="bi bi-check"></i></span>
+                    <p>Depresi</p>
+                </div>
+
+                <div class="line active"></div>
+
+                <div class="step active">
+                    <span><i class="bi bi-check"></i></span>
+                    <p>Anxiety</p>
+                </div>
+
+                <div class="line active"></div>
+
+                <div class="step active">
+                    <span>3</span>
+                    <p>Stress</p>
+                </div>
+
+            </div>
+
+                <h1>
+                    Langkah 3 dari 3 
+                </h1>
+                <h2>
+                    Tes Stress
+                </h2>
+
+                <p>
+                    Stres  adalah kondisi tidak nyaman yang timbul akibat lingkungan sekitar. 
+                    Stres adalah satu factor   utama   munculnya   masalah   sosial   dan kesehatan. 
+                    Stres  yang  berkelanjutan  juga  dapat berdampak pada masalah kesehatan jiwa seperti depresi,  ansietas,  putus  sekolah,  bahkan  hingga bunuh diri
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- PETUNJUK -->
+        <div class="petunjuk-box"data-aos="fade-up">
+
+            <h3>
+                Petunjuk Pengisian
+            </h3>
+
+            <ul>
+
+                <li>
+                    Jawablah semua pertanyaan sesuai kondisi yang kamu alami atau rasakan.
+                </li>
+
+                <li>
+                    Setiap jawaban yang dijawab akan mendapatkan skor.
+                </li>
+
+                <li>
+                    semakin sesuai yang kamu alami maka hasil tes ini akan semakin akurat dan benar.
+                </li>
+
+                <li>
+                    Klik cek hasil untuk melihat hasil tes.
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- FORM -->
+    <form action="/stress" method="POST"
+            id="tesForm"
+            novalidate>
+        <div class="form-box"> 
+            <!-- PERTANYAAN -->
+            <div class="pertanyaan-section">
+
+                <h2>
+                    Jawablah setiap pertanyaan sesuai dengan kondisi yang kamu rasakan selama 7 hari terakhir
+                </h2>
+
+                <!-- SOAL -->
+                <div class="soal-box"data-aos="fade-up">
+
+                    <h4>
+                        1.Saya merasa sulit untuk beristirahat.
+                    </h4>
+
+                     <div class="jawaban-group">
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                name="q1"
+                                 value="0">
+
+                                    <span>
+                                     Tidak Pernah
+                                    </span>
+
+                          </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                             name="q1"
+                             value="1">
+
+                                <span>
+                                    Kadang-kadang
+                                </span>
+
+                        </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                 name="q1"
+                                value="2">
+
+                                <span>
+                                    Cukup Sering
+                                </span>
+
+                        </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                name="q1"
+                                value="3">
+
+                                <span>
+                                    Sangat Sering
+                                </span>
+
+                        </label>
+
+            </div>
+
+                </div>
+                <div class="soal-box" data-aos="fade-up">
+
+                    <h4>
+                        2. Saya cenderung menunjukkan reaksi berlebihan terhadap suatu situasi.
+                    </h4>
+
+                     <div class="jawaban-group">
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                name="q2"
+                                 value="0">
+
+                                    <span>
+                                     Tidak Pernah
+                                    </span>
+
+                          </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                             name="q2"
+                             value="1">
+
+                                <span>
+                                    Kadang-kadang
+                                </span>
+
+                        </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                 name="q2"
+                                value="2">
+
+                                <span>
+                                    Cukup Sering
+                                </span>
+
+                        </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                name="q2"
+                                value="3">
+
+                                <span>
+                                    Sangat Sering
+                                </span>
+
+                        </label>
+
+            </div>
+
+                </div>
+            <div class="soal-box" data-aos="fade-up">
+
+                    <h4>
+                        3. Saya merasa energi saya terkuras karena terlalu cemas.
+                    </h4>
+
+                     <div class="jawaban-group">
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                name="q3"
+                                 value="0">
+
+                                    <span>
+                                     Tidak Pernah
+                                    </span>
+
+                          </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                             name="q3"
+                             value="1">
+
+                                <span>
+                                    Kadang-kadang
+                                </span>
+
+                        </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                 name="q3"
+                                value="2">
+
+                                <span>
+                                    Cukup Sering
+                                </span>
+
+                        </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                name="q3"
+                                value="3">
+
+                                <span>
+                                    Sangat Sering
+                                </span>
+
+                        </label>
+
+            </div>
+
+                </div>
+                <div class="soal-box" data-aos="fade-up">
+
+                    <h4>
+                        4. Saya merasa gelisah.
+                    </h4>
+
+                     <div class="jawaban-group">
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                name="q4"
+                                 value="0">
+
+                                    <span>
+                                     Tidak Pernah
+                                    </span>
+
+                          </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                             name="q4"
+                             value="1">
+
+                                <span>
+                                    Kadang-kadang
+                                </span>
+
+                        </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                 name="q4"
+                                value="2">
+
+                                <span>
+                                    Cukup Sering
+                                </span>
+
+                        </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                name="q4"
+                                value="3">
+
+                                <span>
+                                    Sangat Sering
+                                </span>
+
+                        </label>
+
+            </div>
+
+                </div>
+                <div class="soal-box" data-aos="fade-up">
+
+                    <h4>
+                        5. Saya  merasa sulit untuk merasa tenang.
+                    </h4>
+
+                     <div class="jawaban-group">
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                name="q5"
+                                 value="0">
+
+                                    <span>
+                                     Tidak Pernah
+                                    </span>
+
+                          </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                             name="q5"
+                             value="1">
+
+                                <span>
+                                    Kadang-kadang
+                                </span>
+
+                        </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                 name="q5"
+                                value="2">
+
+                                <span>
+                                    Cukup Sering
+                                </span>
+
+                        </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                name="q5"
+                                value="3">
+
+                                <span>
+                                    Sangat Sering
+                                </span>
+
+                        </label>
+
+            </div>
+
+                </div>
+                <div class="soal-box"data-aos="fade-up">
+
+                    <h4>
+                        6. Saya sulit untuk bersabar dalam menghadapi gangguan yang terjadi ketika sedang  melakukan sesuatu.
+                    </h4>
+
+                     <div class="jawaban-group">
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                name="q6"
+                                 value="0">
+
+                                    <span>
+                                     Tidak Pernah
+                                    </span>
+
+                          </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                             name="q6"
+                             value="1">
+
+                                <span>
+                                    Kadang-kadang
+                                </span>
+
+                        </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                 name="q6"
+                                value="2">
+
+                                <span>
+                                    Cukup Sering
+                                </span>
+
+                        </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                name="q6"
+                                value="3">
+
+                                <span>
+                                    Sangat Sering
+                                </span>
+
+                        </label>
+
+            </div>
+
+                </div>
+                
+            <div class="soal-box" data-aos="fade-up">
+
+                    <h4>
+                        7. Perasaan saya mudah tergugah atau tersentuh.
+                    </h4>
+
+                     <div class="jawaban-group">
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                name="q7"
+                                 value="0">
+
+                                    <span>
+                                     Tidak Pernah
+                                    </span>
+
+                          </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                             name="q7"
+                             value="1">
+
+                                <span>
+                                    Kadang-kadang
+                                </span>
+
+                        </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                 name="q7"
+                                value="2">
+
+                                <span>
+                                    Cukup Sering
+                                </span>
+
+                        </label>
+
+                        <label class="jawaban-item">
+
+                            <input type="radio"
+                                name="q7"
+                                value="3">
+
+                                <span>
+                                    Sangat Sering
+                                </span>
+
+                        </label>
+
+            </div>
+        </div>       
+                <p id="warningText"
+                    class="warning-text">
+
+                    <i class="bi bi-exclamation-circle-fill"></i>
+
+                     Harap jawab semua pertanyaan terlebih dahulu!
+
+                </p> 
+
+
+<!-- BUTTON -->
+                <div class="aksi-btn">
+
+                     <button type="button"
+                        class="kembali-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#keluarModal">
+
+                         Kembali
+
+                    </button>
+
+                     <button type="submit"
+                        class="hasil-btn">
+
+                        Cek Hasil
+
+                    </button>
+
+                </div>
+                </section>
+<!-- MODAL KELUAR -->
+    <div class="modal fade"
+        id="keluarModal"
+        tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content keluar-box">
+
+            <div class="modal-body text-center">
+
+                <h3>
+                    Yakin ingin kembali?
+                </h3>
+
+                <div class="keluar-action">
+
+                    <button type="button"
+                    class="batal-btn"
+                    data-bs-dismiss="modal">
+
+                        Batal
+
+                    </button>
+
+                    <a href="/anxiety"
+                    class="ya-btn">
+
+                        Ya, Kembali
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+
+        radio.addEventListener("change", function () {
+
+            document
+                .querySelectorAll(`input[name="${this.name}"]`)
+                .forEach((item) => {
+
+                    const parent =
+                        item.closest(".jawaban-item");
+
+                    if (parent) {
+                        parent.classList.remove("selected");
+                    }
+                });
+
+            const active =
+                this.closest(".jawaban-item");
+
+            if (active) {
+                active.classList.add("selected");
+            }
+        });
+
+    });
+
+});
+</script>
+
+{% endblock %}

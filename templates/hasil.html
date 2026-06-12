@@ -1,0 +1,289 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid px-5 py-5 hasil-container">
+
+  <!-- HEADER -->
+  <div class="d-flex justify-content-between align-items-center mb-4 hasil-header">
+
+    <div>
+      <h2 class="fw-bold mb-1">Laporan Hasil DASS-21</h2>
+
+      <p class="text-muted mb-0">
+        Ringkasan kondisi kesehatan mental pengguna
+      </p>
+    </div>
+
+    <a href="{{ url_for('download_pdf', id=riwayat_id) }}"
+       class="btn btn-info text-white btn-download1">
+
+      <i class="bi bi-download"></i>
+      Download PDF
+
+    </a>
+
+  </div>
+
+  <div class="row g-4">
+
+    <!-- TOTAL SKOR -->
+    <div class="col-lg-4">
+
+      <div class="card shadow-sm border-0 h-100 hasil-card" data-aos="fade-up">
+
+        <div class="card-body text-center">
+
+          <div class="total-circle mx-auto">
+
+            <h1 class="fw-bold text-primary mb-0">
+              {{ skor_depresi + skor_anxiety + skor_stress }}
+            </h1>
+
+            <small>Total Skor</small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- DATA PESERTA -->
+    <div class="col-lg-4">
+
+      <div class="card shadow-sm border-0 h-100 hasil-card" data-aos="fade-up">
+
+        <div class="card-body">
+
+          <h4 class="fw-bold mb-3">Data Peserta</h4>
+
+          <p><b>Nama :</b> {{ user.nama }}</p>
+
+          <p><b>Usia :</b> {{ user.usia }} Tahun</p>
+
+          <p><b>Gender :</b> {{ user.gender }}</p>
+
+          <p><b>Prodi :</b> {{ user.prodi }}</p>
+
+          <p><b>Semester :</b> {{ user.semester }}</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RINGKASAN HASIL -->
+    <div class="col-lg-4">
+
+      <div class="card shadow-sm border-0 h-100 hasil-card" data-aos="fade-up">
+
+        <div class="card-body">
+
+          <h4 class="fw-bold mb-3">Ringkasan Hasil</h4>
+
+          <p>
+            Depresi :
+            <b>{{ depresi }}</b>
+          </p>
+
+          <p>
+            Anxiety :
+            <b>{{ anxiety }}</b>
+          </p>
+
+          <p>
+            Stress :
+            <b>{{ stress }}</b>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- DETAIL SKOR -->
+    <div class="col-lg-12">
+
+      <div class="card shadow-sm border-0 detail-card" data-aos="fade-up">
+
+        <div class="card-body">
+
+          <h4 class="fw-bold mb-4">Detail Skor</h4>
+
+          <!-- DEPRESI -->
+          <div class="mb-5">
+
+            <div class="d-flex justify-content-between mb-2">
+
+              <label class="fw-bold">
+                Depresi ({{ skor_depresi }})
+              </label>
+
+              <span class="badge {{ warna_depresi }}">
+                {{ depresi }}
+              </span>
+
+            </div>
+
+            <div class="progress">
+
+              <div class="progress-bar {{ warna_depresi }}"
+                   role="progressbar"
+                   data-width="{{ persen_depresi }}">
+
+                {{ skor_depresi }}
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- ANXIETY -->
+          <div class="mb-5">
+
+            <div class="d-flex justify-content-between mb-2">
+
+              <label class="fw-bold">
+                Anxiety ({{ skor_anxiety }})
+              </label>
+
+              <span class="badge {{ warna_anxiety }}">
+                {{ anxiety }}
+              </span>
+
+            </div>
+
+            <div class="progress">
+
+              <div class="progress-bar {{ warna_anxiety }}"
+                   role="progressbar"
+                   data-width="{{ persen_anxiety }}">
+
+                {{ skor_anxiety }}
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- STRESS -->
+          <div>
+
+            <div class="d-flex justify-content-between mb-2">
+
+              <label class="fw-bold">
+                Stress ({{ skor_stress }})
+              </label>
+
+              <span class="badge {{ warna_stress }}">
+                {{ stress }}
+              </span>
+
+            </div>
+
+            <div class="progress">
+
+              <div class="progress-bar {{ warna_stress }}"
+                   role="progressbar"
+                   data-width="{{ persen_stress }}">
+
+                {{ skor_stress }}
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- KESIMPULAN -->
+    <div class="col-lg-12" data-aos="fade-up">
+
+      <div class="alert alert-warning hasil-kesimpulan">
+
+        <h4 class="fw-bold">
+          Kesimpulan
+        </h4>
+
+        Berdasarkan hasil pengukuran DASS-21,
+        tingkat Depresi berada pada kategori
+        <b>{{ depresi }}</b>,
+        Anxiety berada pada kategori
+        <b>{{ anxiety }}</b>,
+        dan Stress berada pada kategori
+        <b>{{ stress }}</b>.
+
+      </div>
+
+    </div>
+
+    <!-- REKOMENDASI -->
+    <div class="col-lg-12" data-aos="fade-up">
+
+      <div class="card shadow-sm border-0 rekomendasi-card">
+
+        <div class="card-body">
+
+          <h4 class="fw-bold mb-4">
+            Rekomendasi Untuk Kamu
+          </h4>
+
+          <ul class="list-group">
+
+            {% for item in rekomendasi %}
+
+            <li class="list-group-item">
+              {{ item }}
+            </li>
+
+            {% endfor %}
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="hasil-card lanjut-selfcare-card">
+
+    <h3>
+        Lanjutkan Selfcare
+    </h3>
+
+    <p>
+        Temukan berbagai aktivitas selfcare yang dapat membantu menjaga kesehatan mentalmu.
+    </p>
+
+    <a href="/selfcare" class="download-btn">
+
+        Lihat Selfcare
+        <i class="bi bi-arrow-right"></i>
+
+    </a>
+
+</div>
+
+</div>
+
+<script>
+  document.querySelectorAll(".progress-bar").forEach((bar) => {
+    bar.style.width = bar.dataset.width + "%";
+  });
+</script>
+
+{% endblock %}

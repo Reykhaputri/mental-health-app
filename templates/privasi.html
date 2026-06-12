@@ -1,0 +1,136 @@
+{% extends 'base.html' %} {% block content %}
+
+<section class="info-page">
+  <div class="container">
+    <!-- HERO -->
+    <div class="info-hero fade-up">
+      <h1>
+        <i class="bi bi-shield-lock-fill"></i>
+        Kebijakan Privasi
+      </h1>
+
+      <p>Privasi dan keamanan data pengguna merupakan prioritas utama dalam pengembangan platform PULIH.</p>
+    </div>
+
+    <!-- CARD 1 -->
+    <div class="info-card fade-up">
+      <div class="info-icon">
+        <i class="bi bi-person-fill"></i>
+      </div>
+
+      <h3>Informasi yang Kami Kumpulkan</h3>
+
+      <p>Untuk memberikan layanan yang optimal, sistem dapat menyimpan beberapa informasi seperti:</p>
+
+      <ul>
+        <li>Nama pengguna</li>
+        <li>Email</li>
+        <li>Usia</li>
+        <li>Jenis kelamin</li>
+        <li>Program studi</li>
+        <li>Semester</li>
+        <li>Riwayat hasil tes DASS-21</li>
+      </ul>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="info-card fade-up">
+      <div class="info-icon">
+        <i class="bi bi-bar-chart-fill"></i>
+      </div>
+
+      <h3>Penggunaan Data</h3>
+
+      <p>Informasi yang dikumpulkan digunakan untuk:</p>
+
+      <ul>
+        <li>Menyimpan hasil tes pengguna.</li>
+
+        <li>Menampilkan riwayat tes.</li>
+
+        <li>Memberikan rekomendasi kesehatan mental.</li>
+
+        <li>Meningkatkan kualitas sistem.</li>
+
+        <li>Mengembangkan fitur yang lebih baik.</li>
+      </ul>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="info-card fade-up">
+      <div class="info-icon">
+        <i class="bi bi-lock-fill"></i>
+      </div>
+
+      <h3>Keamanan Data</h3>
+
+      <p>Kami menerapkan berbagai langkah keamanan untuk melindungi data pengguna dari akses yang tidak sah, perubahan, maupun penyalahgunaan.</p>
+
+      <p>Meskipun demikian, tidak ada sistem digital yang dapat menjamin keamanan 100%.</p>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="info-card fade-up">
+      <h3>Siklus Pengelolaan Data</h3>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h5>1. Pengumpulan</h5>
+
+          <p>Data dikumpulkan saat pengguna membuat akun dan mengisi tes.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h5>2. Penyimpanan</h5>
+
+          <p>Data disimpan dalam database sistem.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h5>3. Pengolahan</h5>
+
+          <p>Sistem mengolah data untuk menghasilkan laporan kesehatan mental.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h5>4. Perlindungan</h5>
+
+          <p>Data dijaga kerahasiaannya dan tidak diperjualbelikan.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="info-card fade-up">
+      <div class="info-icon">
+        <i class="bi bi-person-check-fill"></i>
+      </div>
+
+      <h3>Hak Pengguna</h3>
+
+      <p>Setiap pengguna memiliki hak untuk:</p>
+
+      <ul>
+        <li>Melihat data pribadi yang tersimpan.</li>
+
+        <li>Memperbarui informasi akun.</li>
+
+        <li>Menghapus akun apabila diperlukan.</li>
+
+        <li>Meminta informasi terkait penggunaan data.</li>
+      </ul>
+    </div>
+
+    <!-- ALERT -->
+    <div class="alert alert-info mt-4 p-4 rounded-4">
+      <h5>
+        <i class="bi bi-info-circle-fill"></i>
+        Informasi Penting
+      </h5>
+
+      <p class="mb-0">PULIH tidak akan menjual, menyewakan, ataupun membagikan data pribadi pengguna kepada pihak ketiga tanpa izin pengguna.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

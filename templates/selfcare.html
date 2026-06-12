@@ -1,0 +1,1163 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="selfcare-section">
+        <div class="container"data-aos="fade-up">
+
+            <div class="tes-header">
+
+                <h1>
+                    Lakukan Selfcare yang kamu butuhkan
+                </h1>
+
+            </div>
+
+            <p class="selfcare-subtitle">
+                Pilih aktivitas yang paling sesuai dengan kebutuhanmu hari ini
+            </p>
+
+        <!-- CARD -->
+        <div class="row g-4 justify-content-center">
+
+            <!-- CARD 1 -->
+            <div class="col-lg-5">
+
+                <div class="selfcare-card blue-card">
+
+                    <img src="{{ url_for('static', filename='img/selfcare/4.png') }}">
+
+                    <div class="card-text">
+
+                        <h3>
+                            Relaksasi Tubuh & Otot
+                        </h3>
+
+                        <p>
+                            Gerakan peregangan untuk merilis ketegangan fisik
+                        </p>
+
+                        <!-- BUTTON -->
+                        <a href="#"
+                            class="selfcare-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalRelaksasi">
+                            Lihat Detail
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="col-lg-5">
+
+                <div class="selfcare-card green-card">
+
+                    <img src="{{ url_for('static', filename='img/selfcare/3.png') }}">
+
+                    <div class="card-text">
+
+                        <h3>
+                            Jurnal Ekspresi Emosi
+                        </h3>
+
+                        <p>
+                            Tuangkan perasaanmu secara jujur melalui tulisan
+                        </p>
+
+                        <a href="#"
+                            class="selfcare-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalJurnal">
+
+                            Lihat Detail
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="col-lg-5">
+
+                <div class="selfcare-card purple-card">
+
+                    <img src="{{ url_for('static', filename='img/selfcare/2.png') }}">
+
+                    <div class="card-text">
+
+                        <h3>
+                            Latihan Pernapasan Cepat
+                        </h3>
+
+                        <p>
+                            Solusi instan untuk meredakan cemas dan panik
+                        </p>
+
+                        <a href="#"
+                            class="selfcare-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalPernafasan">
+
+                            Lihat Detail
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="col-lg-5">
+
+                <div class="selfcare-card softgreen-card">
+
+                    <img src="{{ url_for('static', filename='img/selfcare/1.png') }}">
+
+                    <div class="card-text">
+
+                        <h3>
+                            Meditasi & Ketenangan
+                        </h3>
+
+                        <p>
+                            Latih fokus pikiran untuk mendapatkan kedamaian
+                        </p>
+
+                        <a href="#"
+                            class="selfcare-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalMeditasi">
+
+                            Lihat Detail
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="col-lg-5">
+
+                <div class="selfcare-card nutrition-card">
+
+                    <img src="{{ url_for('static', filename='img/selfcare/5.png') }}">
+
+                    <div class="card-text">
+
+                        <h3>
+                            Panduan Nutrisi
+                        </h3>
+
+                        <p>
+                            Hubungan pola makan dengan keseimbangan emosi
+                        </p>
+
+                        <a href="#"
+                            class="selfcare-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalNutrisi">
+
+                            Lihat Detail
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+</section>
+<!-- MINI SUPPORT SECTION -->
+<div class="container-support">
+
+    <section class="mini-support">
+
+    <!-- LEFT -->
+    <div class="support-left">
+
+        <div class="support-icon">
+
+            <i class="bi bi-heart-pulse"></i>
+
+        </div>
+
+        <div class="support-text">
+
+            <h3>
+                Masih Butuh Bantuan?
+            </h3>
+
+            <p>
+                Jika kamu merasa membutuhkan bantuan lebih lanjut,
+                jangan ragu untuk mencari dukungan profesional.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="support-right">
+
+        <!-- ITEM -->
+        <div class="support-item">
+
+            <div class="item-icon">
+
+                <i class="bi bi-telephone"></i>
+
+            </div>
+
+            <div>
+
+                <h4>
+                    Hotline Mental Health
+                </h4>
+
+                <a href="tel:119">
+                    119 ext. 8
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- ITEM -->
+        <div class="support-item">
+
+            <div class="item-icon">
+
+                <i class="bi bi-chat-dots"></i>
+
+            </div>
+
+            <div>
+
+                <h4>
+                    Konseling Online
+                </h4>
+
+                <a href="https://satusehat.kemkes.go.id"
+                target="_blank">
+
+                    Kunjungi Website
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- ITEM -->
+        <div class="support-item">
+
+            <div class="item-icon">
+
+                <i class="bi bi-envelope"></i>
+
+            </div>
+
+            <div>
+
+                <h4>
+                    Email Support
+                </h4>
+
+                <a href="mailto:pulih@gmail.com">
+
+                    pulih@gmail.com
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </section>
+</div>
+
+<!-- MODAL Refleksi-->
+<div class="modal fade"
+        id="modalRelaksasi"
+        tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered modal-xl">">
+
+        <div class="modal-content selfcare-modal">
+
+            <!-- HEADER -->
+            <div class="modal-header selfcare-header">
+
+                <button type="button"
+                class="close-btn"
+                data-bs-dismiss="modal">
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body">
+
+                <!-- TOP -->
+                <div class="detail-top">
+
+                    <!-- IMAGE -->
+                    <div class="detail-image">
+
+                        <img src="{{ url_for('static',
+                        filename='img/selfcare/4.png') }}">
+
+                    </div>
+
+                    <!-- TEXT -->
+                    <div class="detail-text">
+
+                        <h2>
+                            Relaksasi Tubuh & Otot
+                        </h2>
+
+                        <p>
+                            Teknik relaksasi yang berfokus pada
+                            pengencangan dan pengenduran kelompok
+                            otot secara berurutan. Tujuannya agar
+                            tubuh bisa membedakan antara sensasi
+                            tegang dan rileks, sehingga memicu
+                            respon relaksasi yang dalam.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- STEP BOX -->
+                <div class="langkah-box">
+
+                    <h3>
+                        Panduan Langkah-Demi-Langkah
+                    </h3>
+
+                    <!-- ITEM -->
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            1
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Tangan & Lengan
+                            </h4>
+
+                            <p>
+                                Kepalkan tangan sekuat mungkin
+                                hingga terasa tegang di lengan bawah,
+                                lalu lepaskan.
+                            </p>
+
+                        </div>
+
+                        <span>
+                            5 detik tegang,
+                            10 detik lepas
+                        </span>
+
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            2
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Bahu
+                            </h4>
+
+                            <p>
+                                Angkat bahu setinggi mungkin
+                                mendekati telinga, rasakan tegangnya,
+                                lalu jatuhkan.
+                            </p>
+
+                        </div>
+
+                        <span>
+                            5 detik tegang,
+                            10 detik lepas
+                        </span>
+
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            3
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Wajah
+                            </h4>
+
+                            <p>
+                                Kerutkan dahi dan mata,
+                                rapatkan rahang, lalu lepaskan
+                                hingga wajah terasa rileks.
+                            </p>
+
+                        </div>
+
+                        <span>
+                            5 detik tegang,
+                            10 detik lepas
+                        </span>
+
+                    </div>
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            4
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Perut
+                            </h4>
+
+                            <p>
+                                 Tarik perut ke dalam seolah ingin menyentuh 
+                                 tulang belakang, tahan, lalu lepaskan.
+                            </p>
+
+                        </div>
+
+                        <span>
+                            5 detik tegang,
+                            10 detik lepas
+                        </span>
+
+                    </div>
+
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            5
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Kaki
+                            </h4>
+
+                            <p>
+                                Tekuk jari-jari kaki ke bawah, rasakan ketegangan di betis
+                                dan kaki, lalu biarkan rileks sepenuhnya.
+                            </p>
+
+                        </div>
+
+                        <span>
+                            5 detik tegang,
+                            10 detik lepas
+                        </span>
+
+                    </div>
+                    
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL Jurnal-->
+<div class="modal fade"
+id="modalJurnal"
+tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered modal-xl">">
+
+        <div class="modal-content selfcare-modal">
+
+            <!-- HEADER -->
+            <div class="modal-header selfcare-header">
+
+                <button type="button"
+                class="close-btn"
+                data-bs-dismiss="modal">
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body">
+
+                <!-- TOP -->
+                <div class="detail-top">
+
+                    <!-- IMAGE -->
+                    <div class="detail-image">
+
+                        <img src="{{ url_for('static',
+                        filename='img/selfcare/3.png') }}">
+
+                    </div>
+
+                    <!-- TEXT -->
+                    <div class="detail-text">
+
+                        <h2>
+                            Jurnal Ekspresi Emosi
+                        </h2>
+
+                        <p>
+                           Teknik ini bukan sekadar menulis buku harian biasa. 
+                           Menulis ekspresif adalah metode intervensi psikologis di mana seseorang 
+                           menuliskan pikiran dan perasaan terdalam mereka tentang pengalaman yang menekan. 
+                           Tujuannya adalah untuk membantu otak memproses emosi secara lebih terstruktur (cognitive processing).
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- STEP BOX -->
+                <div class="langkah-box">
+
+                    <h3>
+                        Panduan Langkah-Demi-Langkah
+                    </h3>
+
+                    <!-- ITEM -->
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            1
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Cari Ruang Aman
+                            </h4>
+
+                            <p>
+                               Pastikan kamu berada di tempat yang tenang di mana kamu tidak akan terganggu.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            2
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Atur Waktu
+                            </h4>
+
+                            <p>
+                                Siapkan waktu sekitar 15 menit.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            3
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Tulis tanpa filter
+                            </h4>
+
+                            <p>
+                                Tuliskan apa pun yang kamu rasakan saat ini. Jangan mengkhawatirkan ejaan, tanda baca, atau tata bahasa.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            4
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Fokus pada emosi
+                            </h4>
+
+                            <p>
+                                 Jangan hanya menulis kejadiannya, tapi tuliskan bagaimana kejadian itu memengaruhi perasaanmu dan apa dampaknya bagi hidupmu.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            5
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Privasi Total
+                            </h4>
+
+                            <p>
+                                 Ingatlah bahwa tulisan ini hanya untuk dirimu sendiri. Kejujuran adalah kunci utama dari efektivitas teknik ini.
+                            </p>
+
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL Latihan Pernafasan-->
+<div class="modal fade"
+    id="modalPernafasan"
+    tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered modal-xl">">
+
+        <div class="modal-content selfcare-modal">
+
+            <!-- HEADER -->
+            <div class="modal-header selfcare-header">
+
+                <button type="button"
+                class="close-btn"
+                data-bs-dismiss="modal">
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body">
+
+                <!-- TOP -->
+                <div class="detail-top">
+
+                    <!-- IMAGE -->
+                    <div class="detail-image">
+
+                        <img src="{{ url_for('static',
+                        filename='img/selfcare/2.png') }}">
+
+                    </div>
+
+                    <!-- TEXT -->
+                    <div class="detail-text">
+
+                        <h2>
+                            Latihan Pernafasan Cepat
+                        </h2>
+
+                        <p>
+                           Teknik ini dikembangkan oleh Dr. Andrew Weil yang didasarkan pada praktik Pranayama kuno.
+                            Tujuannya adalah untuk melatih sistem saraf agar kembali ke kondisi tenang (rest-and-digest) 
+                            dengan cara mengatur ritme oksigen dan karbon dioksida dalam darah, serta menstimulasi saraf Vagus.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- STEP BOX -->
+                <div class="langkah-box">
+
+                    <h3>
+                        Panduan Langkah-Demi-Langkah
+                    </h3>
+                    <h2>
+                        pengguna harus duduk tegak dengan punggung lurus, lalu lakukan siklus berikut:
+                    </h2>
+
+                    <!-- ITEM -->
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            1
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Tarik Napas 
+                            </h4>
+
+                            <p>
+                               Tutup mulut dan tarik napas dalam-dalam melalui hidung secara perlahan sambil menghitung satu sampai empat.
+                            </p>
+
+                            <span>
+                                4 Detik
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            2
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Tahan Nafas
+                            </h4>
+
+                            <p>
+                                Tahan napasmu selama tujuh detik. Ini adalah bagian terpenting untuk membiarkan oksigen menyerap ke seluruh tubuh.
+                            </p>
+
+                            <span>
+                                7 Detik
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            3
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Buang Nafas
+                            </h4>
+
+                            <p>
+                                Buang napas sepenuhnya melalui mulut dengan suara mendesis (whoosh) selama delapan detik.
+                            </p>
+
+                            <span>
+                                8 Detik
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            4
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Ulangi
+                            </h4>
+
+                            <p>
+                            Lakukan siklus ini sebanyak 4 kali putaran.
+                            </p>
+
+                        </div>
+                    </div>                  
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL Meditasi-->
+<div class="modal fade"
+    id="modalMeditasi"
+    tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered modal-xl">">
+
+        <div class="modal-content selfcare-modal">
+
+            <!-- HEADER -->
+            <div class="modal-header selfcare-header">
+
+                <button type="button"
+                class="close-btn"
+                data-bs-dismiss="modal">
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body">
+
+                <!-- TOP -->
+                <div class="detail-top">
+
+                    <!-- IMAGE -->
+                    <div class="detail-image">
+
+                        <img src="{{ url_for('static',
+                        filename='img/selfcare/1.png') }}">
+
+                    </div>
+
+                    <!-- TEXT -->
+                    <div class="detail-text">
+
+                        <h2>
+                            Meditasi & Ketenangan
+                        </h2>
+
+                        <p>
+                           Menggunakan teknik Mindfulness Meditation (Meditasi Kesadaran Penuh). 
+                           Tujuannya adalah melatih otak untuk fokus pada momen saat ini (present moment) 
+                           tanpa memberikan penilaian atau penghakiman terhadap pikiran yang lewat.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- STEP BOX -->
+                <div class="langkah-box">
+
+                    <h3>
+                        Panduan Langkah-Demi-Langkah
+                    </h3>
+
+                    <!-- ITEM -->
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            1
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Duduk Nyaman
+                            </h4>
+
+                            <p>
+                                Posisi punggung tegak namun tetap rileks.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            2
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Fokus Nafas
+                            </h4>
+
+                            <p>
+                                Amati udara yang masuk dan keluar melalui hidung. 
+                                Rasakan sensasi dingin saat menarik napas dan hangat saat membuang napas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            3
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Kesadaran Pikiran
+                            </h4>
+
+                            <p>
+                               Jika pikiranmu melayang ke masa lalu atau masa depan, sadari saja tanpa merasa bersalah, lalu perlahan kembalikan fokus ke napas.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            4
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Durasi
+                            </h4>
+
+                            <p>
+                                Lakukan secara bertahap, mulai dari 3 hingga 5 menit setiap hari
+                            </p>
+
+                        </div>
+                    </div>                  
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL Jurnal-->
+<div class="modal fade"
+    id="modalNutrisi"
+    tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered modal-xl">">
+
+        <div class="modal-content selfcare-modal">
+
+            <!-- HEADER -->
+            <div class="modal-header selfcare-header">
+
+                <button type="button"
+                class="close-btn"
+                data-bs-dismiss="modal">
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+            </div>
+
+            <!-- BODY -->
+            <div class="modal-body">
+
+                <!-- TOP -->
+                <div class="detail-top">
+
+                    <!-- IMAGE -->
+                    <div class="detail-image">
+
+                        <img src="{{ url_for('static',
+                        filename='img/selfcare/5.png') }}">
+
+                    </div>
+
+                    <!-- TEXT -->
+                    <div class="detail-text">
+
+                        <h2>
+                            Panduan Nutrisi
+                        </h2>
+
+                        <p>
+                           Usus kita sering disebut sebagai "otak kedua". Sekitar 95% Serotonin (hormon yang mengatur mood, tidur, dan nafsu makan) diproduksi di saluran pencernaan. 
+                           Oleh karena itu, pola makan yang buruk dapat menyebabkan peradangan pada usus yang kemudian mengirimkan sinyal negatif ke otak, memicu gejala kecemasan dan depresi.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- STEP BOX -->
+                <div class="langkah-box">
+
+                    <h3>
+                        Daftar Nutrisi Pendukung Mood:
+                    </h3>
+
+                    <!-- ITEM -->
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            a
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Omega-3 (Lemak Sehat):
+                            </h4>
+
+                            <p>
+                               Sumber: Ikan (tuna, sarden), kacang almond, dan biji-bijian.
+                               Manfaat: Membantu fungsi sel saraf dan mengurangi peradangan di otak.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            b
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Triptofan (Asam Amino):
+                            </h4>
+
+                            <p>
+                                Sumber: Pisang, telur, keju, dan cokelat hitam (dark chocolate).
+                                Manfaat: Bahan baku utama pembentukan hormon Serotonin (hormon bahagia).
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ITEM -->
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            c
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Probiotik (Bakteri Baik):
+                            </h4>
+
+                            <p>
+                                Sumber: Tempe, yogurt, atau kimchi.
+                                Manfaat: Menjaga kesehatan usus agar produksi hormon pengatur mood tetap optimal.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="langkah-item">
+
+                        <div class="step-number">
+                            d
+                        </div>
+
+                        <div class="step-content">
+
+                            <h4>
+                                Antioksidan:
+                            </h4>
+
+                            <p>
+                                Sumber: Buah beri, sayuran hijau, dan teh hijau.
+                                Manfaat: Melindungi sel otak dari kerusakan akibat stres oksidatif.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="langkah-item">
+
+
+                        <div class="step-content">
+
+                            <h4>
+                                Peringatan: Hindari "Sugar Crash"
+                            </h4>
+
+                            <p>
+                                 Mengonsumsi makanan tinggi gula olahan (minuman manis, boba, atau camilan tepung) dapat menyebabkan lonjakan energi sesaat, namun diikuti oleh penurunan gula darah secara drastis (crash). 
+                                 Kondisi ini sering kali memicu perasaan lemas, mudah marah (irritable), dan cemas
+                            </p>
+
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

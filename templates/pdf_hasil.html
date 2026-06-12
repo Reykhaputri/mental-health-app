@@ -1,0 +1,227 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        color: #333;
+        margin: 20px;
+      }
+
+      .header {
+        text-align: center;
+        border-bottom: 2px solid #40c4d8;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      .logo {
+        color: #40c4d8;
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      .subtitle {
+        color: #777;
+        font-size: 11px;
+      }
+
+      .section-title {
+        background: #40c4d8;
+        color: white;
+        padding: 8px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th {
+        background: #f2f2f2;
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      .info-table td {
+        border: none;
+        padding: 5px;
+      }
+
+      .highlight {
+        background: #f7f7f7;
+        font-weight: bold;
+      }
+
+      .kesimpulan {
+        border: 1px solid #ddd;
+        padding: 12px;
+        background: #fafafa;
+      }
+
+      .rekomendasi {
+        border: 1px solid #ddd;
+        padding: 12px;
+        background: #fafafa;
+      }
+
+      .footer {
+        margin-top: 20px;
+        text-align: center;
+        color: #888;
+        font-size: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+
+    <div class="header">
+      <div class="logo">Pulih</div>
+
+      <h2>LAPORAN HASIL DETEKSI DINI KESEHATAN MENTAL</h2>
+
+      <div class="subtitle">Dicetak pada {{ tanggal.strftime('%d-%m-%Y %H:%M') }}</div>
+    </div>
+
+    <!-- DATA PESERTA -->
+
+    <div class="section-title">DATA PESERTA</div>
+
+    <table class="info-table">
+      <tr>
+        <td width="20%"><b>Nama</b></td>
+        <td width="30%">: {{ user.nama }}</td>
+
+        <td width="20%"><b>Prodi</b></td>
+        <td width="30%">: {{ user.prodi }}</td>
+      </tr>
+
+      <tr>
+        <td><b>Usia</b></td>
+        <td>: {{ user.usia }} Tahun</td>
+
+        <td><b>Semester</b></td>
+        <td>: {{ user.semester }}</td>
+      </tr>
+
+      <tr>
+        <td><b>Jenis Kelamin</b></td>
+        <td>: {{ user.gender }}</td>
+
+        <td><b>Tanggal Tes</b></td>
+        <td>: {{ tanggal.strftime('%d-%m-%Y') }}</td>
+      </tr>
+    </table>
+
+    <!-- HASIL DETEKSI -->
+
+    <div class="section-title">HASIL DETEKSI</div>
+
+    <table>
+      <tr>
+        <th width="40%">Jenis Tes</th>
+        <th width="20%">Skor</th>
+        <th width="40%">Kategori</th>
+      </tr>
+
+      <tr>
+        <td>Depresi</td>
+        <td align="center">{{ skor_depresi }}</td>
+        <td align="center">{{ depresi }}</td>
+      </tr>
+
+      <tr>
+        <td>Anxiety</td>
+        <td align="center">{{ skor_anxiety }}</td>
+        <td align="center">{{ anxiety }}</td>
+      </tr>
+
+      <tr>
+        <td>Stress</td>
+        <td align="center">{{ skor_stress }}</td>
+        <td align="center">{{ stress }}</td>
+      </tr>
+
+      <tr class="highlight">
+        <td>Total Skor</td>
+        <td align="center">{{ skor_depresi + skor_anxiety + skor_stress }}</td>
+        <td align="center">DASS-21</td>
+      </tr>
+    </table>
+
+    <!-- KESIMPULAN -->
+
+    <div class="section-title">KESIMPULAN</div>
+
+    <div class="kesimpulan">
+      <p>
+        Berdasarkan hasil skrining menggunakan instrumen
+        <b>DASS-21</b>, diperoleh hasil:
+      </p>
+
+      <ul>
+        <li>
+          Tingkat Depresi berada pada kategori
+          <b>{{ depresi }}</b>
+        </li>
+
+        <li>
+          Tingkat Anxiety berada pada kategori
+          <b>{{ anxiety }}</b>
+        </li>
+
+        <li>
+          Tingkat Stress berada pada kategori
+          <b>{{ stress }}</b>
+        </li>
+      </ul>
+
+      <p>Hasil ini merupakan skrining awal dan tidak dapat digunakan sebagai diagnosis medis maupun psikologis.</p>
+    </div>
+
+    <!-- REKOMENDASI -->
+
+    <div class="section-title">REKOMENDASI</div>
+
+    <div class="rekomendasi">
+      <ul>
+        <li>Luangkan waktu untuk melakukan self-care dan aktivitas yang disukai.</li>
+
+        <li>Tidur cukup minimal 7-8 jam setiap hari.</li>
+
+        <li>Lakukan relaksasi, meditasi, atau latihan pernapasan.</li>
+
+        <li>Berbagi cerita dengan keluarga atau orang terpercaya.</li>
+
+        <li>Kurangi aktivitas yang memicu stres berlebihan.</li>
+
+        <li>Konsultasikan dengan psikolog apabila gejala menetap atau memburuk.</li>
+      </ul>
+    </div>
+
+    <!-- DISCLAIMER -->
+
+    <div class="section-title">DISCLAIMER</div>
+
+    <p>Laporan ini dibuat secara otomatis oleh Sistem Pulih. Hasil yang ditampilkan merupakan hasil skrining awal kesehatan mental dan bukan diagnosis profesional.</p>
+
+    <!-- FOOTER -->
+
+    <div class="footer">Sistem Pulih - Mental Health Screening System</div>
+  </body>
+</html>

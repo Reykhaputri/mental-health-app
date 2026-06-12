@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% block content %}
+
+<section class="profil-section">
+  <div class="container" data-aos="fade-up">
+    <!-- JUDUL -->
+    <div class="profil-title">
+      <h1>Profil Saya</h1>
+
+      <p>Kelola informasi akun dan pantau aktivitas tes kesehatan mentalmu</p>
+    </div>
+
+    <!-- HEADER PROFIL BARU -->
+    <div class="profile-header-new">
+      <div class="profile-left">
+        <div class="profile-avatar">
+          <i class="bi bi-person-fill"></i>
+        </div>
+
+        <h2>{{ user.nama }}</h2>
+
+        <p>{{ user.email }}</p>
+
+        <a href="/edit_profil" class="edit-profile-btn">
+          <i class="bi bi-pencil-square"></i>
+          Edit Profil
+        </a>
+      </div>
+
+      <div class="profile-right">
+        <div class="total-tes-circle">
+          <span>{{ total_tes }}</span>
+
+          <small>Total Tes</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- DATA DIRI -->
+    <div class="info-card">
+      <h3>Data Diri</h3>
+
+      <div class="info-row">
+        <span>Nama Lengkap</span>
+
+        <strong>{{ user.nama }}</strong>
+      </div>
+
+      <div class="info-row">
+        <span>Usia</span>
+
+        <strong>{{ user.usia }} Tahun</strong>
+      </div>
+
+      <div class="info-row">
+        <span>Jenis Kelamin</span>
+
+        <strong>{{ user.gender }}</strong>
+      </div>
+
+      <div class="info-row">
+        <span>Program Studi</span>
+
+        <strong>{{ user.prodi }}</strong>
+      </div>
+
+      <div class="info-row">
+        <span>Semester</span>
+
+        <strong>{{ user.semester }}</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends 'base.html' %} {% block content %}
+
+<section class="riwayat-section">
+
+    <div class="riwayat-container">
+
+        <div class="riwayat-header" data-aos="zoom-in">
+            <h1>Riwayat Tes</h1>
+            </div>
+            <p>Berikut adalah seluruh hasil tes yang pernah kamu lakukan</p>
+        
+        <div class="btn-wrapper" data-aos="fade-up">
+            <a href="/tes_baru" class="tes-baru-btn">
+                <i class="bi bi-plus-circle"></i>
+                Mulai Tes Baru
+            </a>
+        </div>
+
+        {% if not data %}
+        <div class="empty-state">
+            Belum ada riwayat tes.
+        </div>
+        {% endif %}
+
+        <div class="riwayat-grid">
+
+            {% for item in data %}
+
+            <div class="riwayat-item">
+
+                <div class="riwayat-card" data-aos="fade-up">
+
+                    <div class="riwayat-body">
+
+                        <div class="riwayat-info">
+
+                            <h5>Tes DASS-21 #{{ loop.index }}</h5>
+
+                            <small>
+                                {{ item.tanggal.strftime('%d-%m-%Y %H:%M') }}
+                            </small>
+
+                        </div>
+
+                        <div class="hasil-grid">
+
+                            <div class="hasil-item">
+                                <h3 class="{{ item.text_depresi }}">
+                                    {{ item.skor_depresi }}
+                                </h3>
+
+                                <span>Depresi</span>
+
+                                <div class="badge {{ item.warna_depresi }}">
+                                    {{ item.kategori_depresi }}
+                                </div>
+                            </div>
+
+                            <div class="hasil-item">
+                                <h3 class="{{ item.text_anxiety }}">
+                                    {{ item.skor_anxiety }}
+                                </h3>
+
+                                <span>Anxiety</span>
+
+                                <div class="badge {{ item.warna_anxiety }}">
+                                    {{ item.kategori_anxiety }}
+                                </div>
+                            </div>
+
+                            <div class="hasil-item">
+                                <h3 class="{{ item.text_stress }}">
+                                    {{ item.skor_stress }}
+                                </h3>
+
+                                <span>Stress</span>
+
+                                <div class="badge {{ item.warna_stress }}">
+                                    {{ item.kategori_stress }}
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="action-buttons">
+
+                            <a href="/detail_hasil/{{ item.id }}"
+                               class="btn-detail">
+                               Lihat Hasil
+                            </a>
+
+                            <a href="{{ url_for('download_pdf', id=item.id) }}"
+                               class="btn-download">
+                                <i class="bi bi-download"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
