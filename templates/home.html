@@ -13,8 +13,26 @@
     <p>Lakukan self-assessment untuk memahami kondisi kesehatan mentalmu secara mandiri melalui tes DASS-21 yang mudah dan cepat.</p>
 
     <div class="hero-button" data-aos="fade-up">
-      <a href="#" class="hero-btn pulse-btn" data-bs-toggle="modal" data-bs-target="#consentModal"> Mulai Tes Sekarang </a>
-      <a href="#tentang" class="hero-btn1"> Pelajari lebih lanjut </a>
+       {% if session.get('user_id') %}
+            <a href="#"
+              class="hero-btn pulse-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#consentModal">
+              Mulai Tes Sekarang
+            </a>
+            {% else %}
+            <a href="#"
+              class="hero-btn pulse-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#authModal">
+              Mulai Tes Sekarang
+            </a>
+            {% endif %}
+
+        <a href="#tentang" class="hero-btn1">
+            Pelajari lebih lanjut
+        </a>
+
     </div>
   </div>
 

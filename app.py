@@ -109,6 +109,7 @@ class RiwayatTes(db.Model):
 def home():
     return render_template('home.html',
                            active_page='home')
+
 @app.route('/login', methods=['POST'])
 def login():
 
@@ -234,6 +235,10 @@ def register():
     prodi = request.form['prodi']
     semester = request.form['semester']
 
+    if len(password) < 8:
+        flash('Password minimal 8 karakter!')
+        return redirect('/')
+
     user = User(
         nama=nama,
         email=email,
@@ -258,7 +263,7 @@ def register():
 @app.route('/logout')
 def logout():
 
-    session.pop('user', None)
+    session.clear()
 
     return redirect('/')
 
