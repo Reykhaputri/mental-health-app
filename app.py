@@ -15,7 +15,7 @@ import io
 
 app = Flask(__name__)
 app.secret_key = 'pulih'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pulih.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///instance/pulih.db'
 db = SQLAlchemy(app)
 
 class User(db.Model):
